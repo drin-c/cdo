@@ -1,0 +1,8 @@
+#剔除变量
+  cdo delete,name=... infile outfile
+#变量名
+  cdo showname file
+#合并文件
+  cdo cat infile outfile
+#查看变量维数信息
+  cdo sinfo file
