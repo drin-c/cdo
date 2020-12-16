@@ -6,3 +6,5 @@
   cdo cat infile outfile
 #查看变量维数信息
   cdo sinfo file
+#选择特定区域的数据
+  cdo sellonlatbox,
