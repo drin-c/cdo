@@ -7,4 +7,6 @@
 #查看变量维数信息
   cdo sinfo file
 #选择特定区域的数据
-  cdo sellonlatbox,
+  cdo sellonlatbox,minlon,maxlon,minlat,maxlat infile outfile
+  eg.cdo sellonlat,-30,60,30,80 infile outfile 选择30W-60E,30N-80N （最好输出有检查一下 曾经输出有错
+
