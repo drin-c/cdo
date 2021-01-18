@@ -1,12 +1,31 @@
 #剔除变量
   cdo delete,name=... infile outfile
+
 #变量名
   cdo showname file
+
 #合并文件
   cdo cat infile outfile
+
 #查看变量维数信息
   cdo sinfo file
+
 #选择特定区域的数据
   cdo sellonlatbox,minlon,maxlon,minlat,maxlat infile outfile
   eg.cdo sellonlat,-30,60,30,80 infile outfile 选择30W-60E,30N-80N （最好输出有检查一下 曾经输出有错
 
+#提取特征年份
+  cdo selyear,from/to infile outfile
+  eg.cdo selyear,1989/2015 infile outfile 
+
+#将数据var.nc插值到var2.nc的网格上生成数据var3.nc
+  cdo griddes var2.nc > var2_grid.txt
+  cdo remapbil,var2_grid.txt var.nc var3.nc
+  
+#选择时刻
+  cdo delete，timestep= infile outfile 
+  eg.cdo delete,timestep=-1,-2 WRF_Pre1.nc WRF_Pre2.nc 负数代表从后往前 删除最后两次
+  
+#选择特定日期
+  cdo select,date= infile outfile
+  cdo select,date=2001-06-24T00:00:00 infile outfile
