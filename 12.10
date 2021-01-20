@@ -13,6 +13,10 @@
 #选择特定区域的数据
   cdo sellonlatbox,minlon,maxlon,minlat,maxlat infile outfile
   eg.cdo sellonlat,-30,60,30,80 infile outfile 选择30W-60E,30N-80N （最好输出有检查一下 曾经输出有错
+  
+ #选择特定坐标
+  cdo selindexbox,idx1,idx2,idy1,idy2 dx表示lon，dy表示lat，1表示小，2表示大
+  cdo selindexbox,11,60,3,11 infile outfile
 
 #提取特征年份
   cdo selyear,from/to infile outfile
